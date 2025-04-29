@@ -9,23 +9,19 @@
 
 
 
-
-  <div class="controls">
-    <button (click)="startGame()">Iniciar Juego</button>
-    <span>Ronda: {{ round }}</span>
+<div class="controles">
+    <button (click)="iniciarJuego()">Iniciar Juego</button>
+    <span>Ronda: {{ ronda }}</span>
   </div>
-  
-    
-    <div class="board">
-        @for (color of boardColors; track color) {
-          <div
-            class="button {{ color }}"
-            [class.active]="activeColor === color"
-            (click)="onUserClick(color)">
-          </div>
-        }
+  <div class="tablero">
+    @for (color of coloresTablero; track color) {
+      <div
+        class="boton {{ color }}"
+        [class.activo]="colorActivo === color"
+        (click)="alHacerClick(color)">
       </div>
-      
+    }
+  </div>
 
 
   
