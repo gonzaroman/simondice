@@ -1,0 +1,31 @@
+<!--<div class="board">
+    <div class="button green"></div>
+    <div class="button red"></div>
+    <div class="button yellow"></div>
+    <div class="button blue"></div>
+  </div>
+-->
+
+
+
+
+
+  <div class="controls">
+    <button (click)="startGame()">Iniciar Juego</button>
+    <span>Ronda: {{ round }}</span>
+  </div>
+  
+    
+    <div class="board">
+        @for (color of boardColors; track color) {
+          <div
+            class="button {{ color }}"
+            [class.active]="activeColor === color"
+            (click)="onUserClick(color)">
+          </div>
+        }
+      </div>
+      
+
+
+  
