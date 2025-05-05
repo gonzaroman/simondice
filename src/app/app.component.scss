@@ -1,0 +1,144 @@
+
+
+/* 1. Variables de color y medidas */
+:root {
+    --pad-green: #2ecc71;
+    --pad-red:   #e74c3c;
+    --pad-yellow:#f1c40f;
+    --pad-blue:  #3498db;
+  
+    --box-bg:    #0d0d0d;
+    --text-color:#f1f1f1;
+  
+    --box-radius: 12px;
+    --pad-size:   80px;
+    --gap:        16px;
+  }
+  
+  /* 2. Grid contenedor (2 columnas) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    padding: var(--gap);
+    background: #ffffff;
+  }
+  
+  /* 3. Cada tarjeta */
+  .box {
+    position: relative;
+    background: var(--box-bg);
+    border-radius: var(--box-radius);
+    /* Grosso de borde y color dinámico */
+    border: 2px solid transparent;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--gap) / 2);
+    cursor: pointer;
+    overflow: visible; /* para que se vea el glow */
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* 4. El círculo dentro de cada box */
+  .circle {
+    flex-shrink: 0;
+    width: var(--pad-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition: filter 0.2s;
+  }
+  
+  /* 5. El texto inclinado */
+  .label {
+    font-family: 'Jaro', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transform: rotate(-20deg);
+    white-space: nowrap;
+  }
+  
+  /* 6. Tematización por color */
+  .box.green {
+    --c: var(--pad-green);
+  }
+  .box.red {
+    --c: var(--pad-red);
+  }
+  .box.yellow {
+    --c: var(--pad-yellow);
+  }
+  .box.blue {
+    --c: var(--pad-blue);
+  }
+  
+  /* 7. Aplicar color dinámico */
+  .box.green,
+  .box.red,
+  .box.yellow,
+  .box.blue {
+    border-color: var(--c);
+    box-shadow: 0 0 15px rgba(var(--c-rgb),0.4), inset 0 0 5px rgba(255,255,255,0.2);
+  }
+  .box.green .circle { background: var(--pad-green); }
+  .box.red   .circle { background: var(--pad-red); }
+  .box.yellow .circle{ background: var(--pad-yellow); }
+  .box.blue  .circle { background: var(--pad-blue); }
+  
+  /* 8. Glow al hacer hover o activo */
+  .box:hover {
+    box-shadow:
+      0 0 25px rgba(var(--c-rgb),0.6),
+      inset 0 0 8px rgba(255,255,255,0.3);
+  }
+  .box.green { --c-rgb: 46,204,113; }
+  .box.red   { --c-rgb: 231,36,36; }
+  .box.yellow{ --c-rgb: 219,184,28; }
+  .box.blue  { --c-rgb: 52,152,219; }
+  
+#box-logo{
+    text-align: center;
+}
+
+.box{
+  width: 340px;
+  height: 194px;
+  background-color: #0d0d0d;
+  border-radius: 12px;
+  box-shadow: 0px 0px 50px #2ecc71;
+  border: 1px solid #2ecc71;
+    margin: 4px;
+    padding: 10px;
+}
+
+.circle{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+   
+}
+    #green{
+        background-color: #2ecc71;
+    }
+    #red{
+        background-color: #e72222;
+    }
+    #yellow{
+        background-color: #dbb81c;
+    }
+    #blue{
+        background-color: #1411cc;
+    }
+
+
+.text{
+    font-size: 50px;
+    line-height: undefined;
+    font-family: "Jaro", sans-serif;
+    color: #fff6f6;
+}
+
