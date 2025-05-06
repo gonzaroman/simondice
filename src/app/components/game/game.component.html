@@ -1,0 +1,20 @@
+<p>game works!</p>
+<div class="controles">
+    <button (click)="iniciarJuego()">Iniciar Juego</button>
+    <span>Ronda: {{ ronda }}</span>
+  </div>
+  <div class="tablero">
+    @for (color of coloresTablero; track color) {
+      <div
+        class="boton {{ color }}"
+        [class.activo]="colorActivo === color"
+        (click)="alHacerClick(color)">
+      </div>
+    }
+  </div>
+
+  
+  <div>
+    
+    <app-score [puntuaciones]="puntuaciones"></app-score>
+  </div>

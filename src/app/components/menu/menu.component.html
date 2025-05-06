@@ -1,0 +1,30 @@
+<nav class="menu">
+    <div class="menu__inner">
+      <!-- Logo -->
+      <a class="menu__logo" routerLink="/">
+        <img src="assets/logo.png" alt="Simon Says">
+      </a>
+  
+      <!-- Enlaces -->
+      <a (click)="goUrl('/game')" class="menu__item menu__item--play">
+        <span class="menu__dot"></span>
+        <span class="menu__label">Play</span>
+      </a>
+  
+      <a (click)="goUrl('/score')" class="menu__item menu__item--score" routerLink="/score">
+        <span class="menu__dot"></span>
+        <span class="menu__label">Score</span>
+      </a>
+  
+      <a (click)="goUrl('/rules')" class="menu__item menu__item--rules" routerLink="/rules">
+        <span class="menu__dot"></span>
+        <span class="menu__label">Rules</span>
+      </a>
+  
+      <a (click)="goUrl('/about')" class="menu__item menu__item--about" routerLink="/about">
+        <span class="menu__dot"></span>
+        <span class="menu__label">About</span>
+      </a>
+    </div>
+  </nav>
+  
