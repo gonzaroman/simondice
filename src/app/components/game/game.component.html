@@ -1,7 +1,7 @@
 
 <div class="controles">
-    <button (click)="iniciarJuego()">Iniciar Juego</button>
-    <span>Ronda: {{ ronda }}</span>
+    
+    <span>LEVEL: {{ ronda }}</span>
   </div>
   <div class="tablero">
     @for (color of coloresTablero; track color) {
@@ -12,7 +12,10 @@
       </div>
     }
   </div>
-
+  <div class="controles">
+    <button (click)="iniciarJuego()">START</button>
+   
+  </div>
   
   <div>
     
