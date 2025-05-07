@@ -6,8 +6,8 @@
   <div class="board">
     @for (color of boardColors; track color) {
       <div
-        class="boton {{ color }}"
-        [class.activo]="activeColor === color"
+        class="button {{ color }}"
+        [class.active]="activeColor === color"
         (click)="onColorClick(color)">
       </div>
     }
@@ -19,5 +19,5 @@
   
   <div>
     
-    <app-score [puntuaciones]="puntuaciones"></app-score>
+    <app-score [scores]="scores"></app-score>
   </div>

@@ -12,6 +12,6 @@ import { Component, Input  } from '@angular/core';
 export class ScoreComponent {
  // puntuaciones: Array<number> = [];
 
-@Input() puntuaciones: Array<number> = [];
+@Input() scores: Array<number> = [];
  
 }

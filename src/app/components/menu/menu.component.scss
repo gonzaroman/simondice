@@ -4,7 +4,7 @@
   
   .menu {
     background: #111;                // color de fondo
-    border-radius: 0 0 12px 12px;    // esquinas redondeadas abajo
+    border-radius: 0 0 0 0;    // esquinas redondeadas abajo
     padding: 0.5rem 1rem;
   
     &__inner {
@@ -17,6 +17,7 @@
     &__logo img {
       height: 40px;
       width: auto;
+      cursor: pointer;
     }
   
     &__item {
@@ -31,6 +32,7 @@
   
       &:hover {
         opacity: 0.75;
+        cursor: pointer;
       }
   
       & .menu__dot {

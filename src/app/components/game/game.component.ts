@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ScoreComponent } from "../score/score.component";
 
-type Color = 'verde' | 'rojo' | 'amarillo' | 'azul';
+type Color = 'green' | 'red' | 'yellow' | 'blue';
 
 
 @Component({
@@ -13,10 +13,10 @@ type Color = 'verde' | 'rojo' | 'amarillo' | 'azul';
 })
 export class GameComponent {
 
-  puntuaciones: Array<number> = [];
+  scores: Array<number> = [];
 
 
-  boardColors: Color[] = ['verde', 'rojo', 'amarillo', 'azul'];
+  boardColors: Color[] = ['green', 'red', 'yellow', 'blue'];
   
   sequence: Color[] = [];
   userStep = 0;
@@ -82,7 +82,7 @@ export class GameComponent {
  
 
   addScore(p:number){
-    this.puntuaciones.push(p);
+    this.scores.push(p);
   }
 
 
