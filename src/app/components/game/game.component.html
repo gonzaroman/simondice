@@ -1,19 +1,19 @@
 
-<div class="controles">
+<div class="controls">
     
-    <span>LEVEL: {{ ronda }}</span>
+    <span>LEVEL: {{ round }}</span>
   </div>
-  <div class="tablero">
-    @for (color of coloresTablero; track color) {
+  <div class="board">
+    @for (color of boardColors; track color) {
       <div
         class="boton {{ color }}"
-        [class.activo]="colorActivo === color"
-        (click)="alHacerClick(color)">
+        [class.activo]="activeColor === color"
+        (click)="onColorClick(color)">
       </div>
     }
   </div>
-  <div class="controles">
-    <button (click)="iniciarJuego()">START</button>
+  <div class="controls">
+    <button (click)="startGame()">START</button>
    
   </div>
   

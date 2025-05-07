@@ -16,72 +16,72 @@ export class GameComponent {
   puntuaciones: Array<number> = [];
 
 
-  coloresTablero: Color[] = ['verde', 'rojo', 'amarillo', 'azul'];
+  boardColors: Color[] = ['verde', 'rojo', 'amarillo', 'azul'];
   
-  secuencia: Color[] = [];
-  pasoUsuario = 0;
-  ronda = 0;
-  estaReproduciendo = false;
+  sequence: Color[] = [];
+  userStep = 0;
+  round = 0;
+  isPlaying = false;
 
   // Color actualmente iluminado
-  colorActivo: Color | null = null;
+  activeColor: Color | null = null;
 
-  iniciarJuego() {
-    this.secuencia = [];
-    this.ronda = 1;
-    this.proximaRonda();
+  startGame() {
+    this.sequence = [];
+    this.round = 1;
+    this.nextRound();
   }
 
-  proximaRonda() {
-    this.estaReproduciendo = true;
-    this.pasoUsuario = 0;
+  nextRound() {
+    this.isPlaying = true;
+    this.userStep = 0;
     // Añadir un color aleatorio a la secuencia
-    this.secuencia.push(this.colorAleatorio());
+    this.sequence.push(this.getRandomColor());
     // Reproducir la secuencia actual
-    this.reproducirSecuencia();
+    this.playSequence();
   }
 
-  colorAleatorio(): Color {
-    const indice = Math.floor(Math.random() * this.coloresTablero.length);
-    return this.coloresTablero[indice];
+  getRandomColor(): Color {
+    const index = Math.floor(Math.random() * this.boardColors.length);
+    return this.boardColors[index];
   }
 
-  reproducirSecuencia() {
-    const retraso = 500;
-    this.secuencia.forEach((color, i) => {
-      setTimeout(() => this.iluminar(color), retraso * (i + 1));
+  playSequence() {
+    const delay = 500;
+    this.sequence.forEach((color, i) => {
+      setTimeout(() => this.highlight(color), delay * (i + 1));
     });
     // Después de mostrar todos, permitir clicks de usuario
     setTimeout(() => {
-      this.estaReproduciendo = false;
-    }, retraso * (this.secuencia.length + 1));
+      this.isPlaying = false;
+    }, delay * (this.sequence.length + 1));
   }
 
-  iluminar(color: Color) {
-    this.colorActivo = color;
-    setTimeout(() => this.colorActivo = null, 400);
+  highlight(color: Color) {
+    this.activeColor = color;
+    setTimeout(() => this.activeColor = null, 400);
   }
 
-  alHacerClick(color: Color) {
-    if (this.estaReproduciendo) return;
+  onColorClick(color: Color) {
+    if (this.isPlaying) return;
 
-    this.iluminar(color);
-    if (color === this.secuencia[this.pasoUsuario]) {
-      this.pasoUsuario++;
-      if (this.pasoUsuario === this.secuencia.length) {
-        this.ronda++;
-        setTimeout(() => this.proximaRonda(), 1000);
+    this.highlight(color);
+    if (color === this.sequence[this.userStep]) {
+      this.userStep++;
+      if (this.userStep === this.sequence.length) {
+        this.round++;
+        setTimeout(() => this.nextRound(), 1000);
       }
     } else {
-      alert(`¡Fallaste en el paso ${this.pasoUsuario + 1}!`);
-      this.estaReproduciendo = false;
-      this.anadirPuntos(this.ronda);
+      alert(`¡You failed on round ${this.round }!`);
+      this.isPlaying = false;
+      this.addScore(this.round);
     }
   }
 
  
 
-  anadirPuntos(p:number){
+  addScore(p:number){
     this.puntuaciones.push(p);
   }
 
