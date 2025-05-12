@@ -1,23 +1,19 @@
-
 <div class="controls">
-    
-    <span>LEVEL: {{ round }}</span>
-  </div>
-  <div class="board">
-    @for (color of boardColors; track color) {
-      <div
-        class="button {{ color }}"
-        [class.active]="activeColor === color"
-        (click)="onColorClick(color)">
-      </div>
-    }
-  </div>
-  <div class="controls">
-    <button (click)="startGame()">START</button>
-   
-  </div>
-  
-  <div>
-    
-    <app-score [scores]="scores"></app-score>
-  </div>
+  <span>LEVEL: {{ round }}</span>
+</div>
+<div class="board">
+  @for (color of boardColors; track color) {
+    <div
+      class="button {{ color }}"
+      [class.active]="activeColor === color"
+      (click)="onColorClick(color)"
+    ></div>
+  }
+</div>
+<div class="controls">
+  <button (click)="startGame()">START</button>
+</div>
+
+<div>
+  <app-score [scores]="scores"></app-score>
+</div>
