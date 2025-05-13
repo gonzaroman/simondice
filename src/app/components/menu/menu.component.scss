@@ -1,67 +1,68 @@
 :host {
-    display: block;
+  display: block;
+}
+
+.menu {
+  background: #111; // color de fondo
+  border-radius: 0 0 0 0; // esquinas redondeadas abajo
+  padding: 0.5rem 1rem;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
   }
-  
-  .menu {
-    background: #111;                // color de fondo
-    border-radius: 0 0 0 0;    // esquinas redondeadas abajo
-    padding: 0.5rem 1rem;
-  
-    &__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-    }
-  
-    &__logo img {
-      height: 40px;
-      width: auto;
+
+  &__logo img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Jaro', sans-serif;
+    font-size: 1rem;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.75;
       cursor: pointer;
     }
-  
-    &__item {
-      display: flex;
-      align-items: center;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #fff;
-      font-family: 'Jaro', sans-serif;
-      font-size: 1rem;
-      transition: opacity 0.2s;
-  
-      &:hover {
-        opacity: 0.75;
-        cursor: pointer;
-      }
-  
-      & .menu__dot {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-        box-shadow: 0 0 10px rgba(0,0,0,0.4);
-        transition: box-shadow 0.2s, filter 0.2s;
-      }
-    }
-  
-    // Tematización de cada color
-    &__item--play .menu__dot {
-      background: #2ecc71;
-      box-shadow: 0 0 12px rgba(46,204,113,0.6);
-    }
-    &__item--score .menu__dot {
-      background: #e74c3c;
-      box-shadow: 0 0 12px rgba(231,36,36,0.6);
-    }
-    &__item--rules .menu__dot {
-      background: #f1c40f;
-      box-shadow: 0 0 12px rgba(241,196,15,0.6);
-    }
-    &__item--about .menu__dot {
-      background: #3498db;
-      box-shadow: 0 0 12px rgba(52,152,219,0.6);
+
+    & .menu__dot {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      transition:
+        box-shadow 0.2s,
+        filter 0.2s;
     }
   }
-  
+
+  // Tematización de cada color
+  &__item--play .menu__dot {
+    background: #2ecc71;
+    box-shadow: 0 0 12px rgba(46, 204, 113, 0.6);
+  }
+  &__item--score .menu__dot {
+    background: #e74c3c;
+    box-shadow: 0 0 12px rgba(231, 36, 36, 0.6);
+  }
+  &__item--rules .menu__dot {
+    background: #f1c40f;
+    box-shadow: 0 0 12px rgba(241, 196, 15, 0.6);
+  }
+  &__item--about .menu__dot {
+    background: #3498db;
+    box-shadow: 0 0 12px rgba(52, 152, 219, 0.6);
+  }
+}

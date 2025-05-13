@@ -1,88 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro&display=swap');
 
 :host {
-    display: block;
+  display: block;
+}
+
+h2 {
+  font-family: 'Jaro', sans-serif;
+  font-size: 2.5rem;
+  color: #222;
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+.plexus {
+  text-align: center;
+}
+/* 1. Página completa bajo el menú */
+.rules-page {
+  /* si quieres un color de fondo sólido: */
+  background-image: url('../../../assets/fondo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* o bien una imagen: */
+  /* background: url('/assets/bg-rules.jpg') center/cover no-repeat; */
+  min-height: calc(100vh - 60px); /* 60px = altura aproximada de tu menú */
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1,
+    h2 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 2.5rem;
+      color: #222;
+    }
   }
 
-  h2 {
-    font-family: 'Jaro', sans-serif;
-    font-size: 2.5rem;
-    color: #222;
-    text-align: center;
-  }
-  p {
-    text-align: center;
-  }
-  .plexus{
-    text-align: center;
-  }
-  /* 1. Página completa bajo el menú */
-  .rules-page {
-    /* si quieres un color de fondo sólido: */
-    background-image: url('../../../assets/fondo.png');
-    background-repeat: no-repeat;
-    background-position: center;
-  
-    /* o bien una imagen: */
-    /* background: url('/assets/bg-rules.jpg') center/cover no-repeat; */
-    min-height: calc(100vh - 60px); /* 60px = altura aproximada de tu menú */
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-  
-    &__header {
-      text-align: center;
-      margin-bottom: 2rem;
-  
-      h1, h2 {
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+
+    .rules-list {
+      counter-reset: rule;
+      list-style: none;
+      padding: 0;
+
+      li {
         font-family: 'Jaro', sans-serif;
-        font-size: 2.5rem;
-        color: #222;
-      }
-    }
-  
-    &__content {
-      max-width: 800px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 8px;
-      padding: 2rem;
-  
-      .rules-list {
-        counter-reset: rule;
-        list-style: none;
-        padding: 0;
-  
-        li {
-            font-family: 'Jaro', sans-serif;
-          position: relative;
-          counter-increment: rule;
-          margin-bottom: 1.5rem;
-          padding-left: 3rem;
-  
-          &::before {
-            content: counter(rule) ".";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #333;
-          }
-  
-          strong {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: #444;
-          }
-  
-          p {
-            margin: 0;
-            line-height: 1.6;
-            color: #555;
-          }
+        position: relative;
+        counter-increment: rule;
+        margin-bottom: 1.5rem;
+        padding-left: 3rem;
+
+        &::before {
+          content: counter(rule) '.';
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-size: 1.25rem;
+          font-weight: bold;
+          color: #333;
+        }
+
+        strong {
+          display: block;
+          font-size: 1.1rem;
+          margin-bottom: 0.25rem;
+          color: #444;
+        }
+
+        p {
+          margin: 0;
+          line-height: 1.6;
+          color: #555;
         }
       }
     }
   }
-  
+}

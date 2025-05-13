@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from "../../components/menu/menu.component";
+import { MenuComponent } from '../../components/menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { GameComponent } from "../../components/game/game.component";
+import { GameComponent } from '../../components/game/game.component';
 
 @Component({
   selector: 'app-gamepage',
   standalone: true,
   imports: [CommonModule, RouterModule, MenuComponent, GameComponent],
   templateUrl: './gamepage.component.html',
-  styleUrl: './gamepage.component.scss'
+  styleUrl: './gamepage.component.scss',
 })
-export class GamepageComponent {
-
-}
+export class GamepageComponent {}

@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { MenuComponent } from "../../components/menu/menu.component";
+import { MenuComponent } from '../../components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pagenotfoundcomponent',
   standalone: true,
-  imports: [MenuComponent,RouterModule],
+  imports: [MenuComponent, RouterModule],
   templateUrl: './pagenotfoundcomponent.component.html',
-  styleUrl: './pagenotfoundcomponent.component.scss'
+  styleUrl: './pagenotfoundcomponent.component.scss',
 })
-export class PagenotfoundcomponentComponent {
-
-}
+export class PagenotfoundcomponentComponent {}

@@ -1,3 +1,19 @@
 <app-menu></app-menu>
 
-<p>estamos en la pagina de Score</p>
+<div>
+  <main class="score-page">
+    <header class="score-page__header">
+      <H1>Scores:</H1>
+    </header>
+
+    <section class="score-page__content">
+      <ul class="score-list">
+        @for (score of scores; track score; let idx = $index) {
+          <li>{{ idx + 1 }}º: LEVEL {{ score }}</li>
+        } @empty {
+          <li>There are no scores.</li>
+        }
+      </ul>
+    </section>
+  </main>
+</div>

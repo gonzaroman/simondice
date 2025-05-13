@@ -1,42 +1,19 @@
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import prettierConfig from 'eslint-config-prettier';
-import pluginPrettier from 'eslint-plugin-prettier';
-import { defineConfig } from 'eslint/config';
- 
-export default defineConfig([
+// eslint.config.mjs
+export default [
+  // ...tus otros bloques de configuración
+
+  // Integra Prettier
   {
-    files: ['**/*.{ts,tsx}'], // Configuración para archivos TypeScript
-    languageOptions: {
-      parser: tsParser, // Usa el parser de TypeScript
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
+    files: ['*.js', '*.ts', '*.jsx', '*.tsx', '*.css', '*.scss', '*.json', '*.md'],
     plugins: {
-      '@typescript-eslint': tsPlugin, // Plugin para TypeScript
-      prettier: pluginPrettier, // Plugin para Prettier
+      prettier: {},
     },
+    extends: [
+      'prettier'
+    ],
     rules: {
-      ...tsPlugin.configs.recommended.rules, // Reglas recomendadas para TypeScript
-      ...prettierConfig.rules, // Reglas de Prettier
-      'prettier/prettier': 'error', // Muestra errores si el código no sigue las reglas de Prettier
-      '@typescript-eslint/no-unused-vars': 'warn', // Ejemplo de regla adicional
+      // Activa las reglas de prettier como errores de ESLint:
+      'prettier/prettier': 'error'
     },
   },
-  {
-    files: ['**/*.{js,mjs,cjs}'], // Configuración para archivos JavaScript
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
-    plugins: {
-      prettier: pluginPrettier, // Plugin para Prettier
-    },
-    rules: {
-      ...prettierConfig.rules, // Reglas de Prettier
-      'prettier/prettier': 'error',
-      'no-unused-vars': 'warn',
-    },
-  },
-]);
- 
+];

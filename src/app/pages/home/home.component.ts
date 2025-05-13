@@ -6,15 +6,13 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
   // inyectamos el Router aquí
   private router = inject(Router);
-  
 
-  goUrl( url : string) {
+  goUrl(url: string) {
     this.router.navigateByUrl(url);
   }
 }

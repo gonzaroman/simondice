@@ -1,9 +1,9 @@
-
-<div>
-    <strong>Scores:</strong>
-    @for (score of scores; track score){
-        <ul>
-            <li>{{score}}</li>
-        </ul>
+<section class="score-page__content">
+  <ul class="score-list">
+    @for (score of scores; track score; let idx = $index) {
+      <li>{{ idx + 1 }}º: LEVEL {{ score }}</li>
+    } @empty {
+      <li>Your last Scores</li>
     }
-  </div>
+  </ul>
+</section>

@@ -11,12 +11,10 @@ import { GamepageComponent } from './pages/gamepage/gamepage.component';
 import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 
 export const routes: Routes = [
-    { path:'', component: HomeComponent},
-    { path:'game', component: GamepageComponent},
-    { path:'score', component: ScorepageComponent},
-    { path:'rules', component: RulespageComponent},
-    { path:'about', component: AboutpageComponent},
-    { path:'**', component:  PagenotfoundcomponentComponent}
-
-
+  { path: '', component: HomeComponent },
+  { path: 'game', component: GamepageComponent },
+  { path: 'score', component: ScorepageComponent },
+  { path: 'rules', component: RulespageComponent },
+  { path: 'about', component: AboutpageComponent },
+  { path: '**', component: PagenotfoundcomponentComponent },
 ];
