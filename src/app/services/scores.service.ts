@@ -16,7 +16,6 @@ export class ScoresService {
       this.scores.splice(5);
     }
 
-    // El menor es simplemente el último de la lista ya ordenada
     const menorNumero = this.scores[this.scores.length - 1];
   }
 }

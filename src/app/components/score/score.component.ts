@@ -9,7 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './score.component.scss',
 })
 export class ScoreComponent {
-  // puntuaciones: Array<number> = [];
-
   @Input() scores: Array<number> = [];
 }

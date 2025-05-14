@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import path from 'node:path';
-import { GameComponent } from './components/game/game.component';
-import { AppComponent } from './app.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { ScorepageComponent } from './pages/scorepage/scorepage.component';
 import { RulespageComponent } from './pages/rulespage/rulespage.component';
@@ -15,6 +12,7 @@ export const routes: Routes = [
   { path: 'game', component: GamepageComponent },
   { path: 'score', component: ScorepageComponent },
   { path: 'rules', component: RulespageComponent },
-  { path: 'about', component: AboutpageComponent },
+  { path: 'about', component: AboutpageComponent, title: 'Acerca de' },
+  { path: 'juego', redirectTo: 'game', pathMatch: 'full' },
   { path: '**', component: PagenotfoundcomponentComponent },
 ];

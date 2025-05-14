@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './menu.component.scss',
 })
 export class MenuComponent {
-  // inyectamos el Router aquí
   private router = inject(Router);
 
   goUrl(url: string) {

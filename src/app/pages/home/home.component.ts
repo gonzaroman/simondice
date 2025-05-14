@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  // inyectamos el Router aquí
   private router = inject(Router);
 
   goUrl(url: string) {

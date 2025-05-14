@@ -19,8 +19,6 @@ export class GameComponent {
 
   constructor() {}
 
-  //scores = this.scoresService.scores ;
-
   boardColors: Color[] = ['green', 'red', 'yellow', 'blue'];
 
   sequence: Color[] = [];
@@ -28,21 +26,20 @@ export class GameComponent {
   round = 0;
   isPlaying = false;
 
-  // Color actualmente iluminado
   activeColor: Color | null = null;
 
-  startGame() {
+  startGame(): void {
     this.sequence = [];
     this.round = 1;
     this.nextRound();
   }
 
-  nextRound() {
+  nextRound(): void {
     this.isPlaying = true;
     this.userStep = 0;
-    // Añadir un color aleatorio a la secuencia
+
     this.sequence.push(this.getRandomColor());
-    // Reproducir la secuencia actual
+
     this.playSequence();
   }
 
@@ -51,12 +48,12 @@ export class GameComponent {
     return this.boardColors[index];
   }
 
-  playSequence() {
+  playSequence(): void {
     const delay = 500;
     this.sequence.forEach((color, i) => {
       setTimeout(() => this.highlight(color), delay * (i + 1));
     });
-    // Después de mostrar todos, permitir clicks de usuario
+
     setTimeout(
       () => {
         this.isPlaying = false;
@@ -65,29 +62,29 @@ export class GameComponent {
     );
   }
 
-  highlight(color: Color) {
+  highlight(color: Color): void {
     this.activeColor = color;
     setTimeout(() => (this.activeColor = null), 400);
   }
 
-  onColorClick(color: Color) {
-    if (this.isPlaying) return;
-
-    this.highlight(color);
-    if (color === this.sequence[this.userStep]) {
-      this.userStep++;
-      if (this.userStep === this.sequence.length) {
-        this.round++;
-        setTimeout(() => this.nextRound(), 1000);
+  onColorClick(color: Color): void {
+    if (!this.isPlaying) {
+      this.highlight(color);
+      if (color === this.sequence[this.userStep]) {
+        this.userStep++;
+        if (this.userStep === this.sequence.length) {
+          this.round++;
+          setTimeout(() => this.nextRound(), 1000);
+        }
+      } else {
+        alert(`¡You failed on round ${this.round}!`);
+        this.isPlaying = false;
+        this.addScore(this.round);
       }
-    } else {
-      alert(`¡You failed on round ${this.round}!`);
-      this.isPlaying = false;
-      this.addScore(this.round);
     }
   }
 
-  addScore(p: number) {
+  addScore(p: number): void {
     this.scores.push(p);
     this.scoresService.addScore(p);
   }
