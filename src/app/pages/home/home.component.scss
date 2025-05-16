@@ -185,3 +185,34 @@
   font-family: 'Jaro', sans-serif;
   color: #fff6f6;
 }
+
+img#logo {
+  width: 100px;
+}
+
+img#logo.expandido {
+  animation: expandir 2s forwards;
+}
+
+@keyframes expandir {
+  from {
+    width: 100px;
+  }
+  to {
+    width: 400px;
+  }
+}
+
+div#buttons {
+  visibility: hidden;
+}
+
+div#buttons.visible {
+  animation: aparecer 0s 2s forwards; /* sin duración, con delay de 2s */
+}
+
+@keyframes aparecer {
+  to {
+    visibility: visible;
+  }
+}

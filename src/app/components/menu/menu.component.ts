@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsernameService } from '../../services/username.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
   private router = inject(Router);
+  public userNameService = inject(UsernameService);
+  userName: String = this.userNameService.namePlayer;
 
   goUrl(url: string) {
     this.router.navigateByUrl(url);
