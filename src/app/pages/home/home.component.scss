@@ -216,3 +216,77 @@ div#buttons.visible {
     visibility: visible;
   }
 }
+
+/* 9. Estilo del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  background-color: var(--box-bg);
+  border: 2px solid var(--pad-green);
+  border-radius: var(--box-radius);
+  padding: 24px;
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'Jaro', sans-serif;
+}
+
+form label {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+form input[type='text'] {
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--pad-green);
+  outline: none;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+form input[type='text']:focus {
+  border-color: var(--pad-green);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+}
+
+form button {
+  margin-top: 15px;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background-color: #76b977;
+  color: #0d0d0d;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+form button:hover {
+  background-color: #28b463;
+  transform: scale(1.05);
+}
+
+p {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-family: 'Jaro', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.7rem;
+  font-family: 'Jaro', sans-serif;
+}

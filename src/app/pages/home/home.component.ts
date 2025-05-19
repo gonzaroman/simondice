@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsernameService } from '../../services/username.service';
@@ -10,13 +10,18 @@ import { UsernameService } from '../../services/username.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private router = inject(Router);
   public userNameService = inject(UsernameService);
 
   playerName: string = this.userNameService.getNamePlayer();
 
   showButton: boolean = false;
+
+  ngOnInit(): void {
+    this.playerName = this.userNameService.getNamePlayer();
+    this.checkPlayerName(); // <-- activa el botón si ya hay nombre
+  }
 
   checkPlayerName() {
     this.showButton = this.playerName !== '';
