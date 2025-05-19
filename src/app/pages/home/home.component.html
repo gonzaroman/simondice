@@ -14,12 +14,12 @@
   <h2>{{ [userForm.value.name] }}</h2>
 
   <!-- @if(userForm.value.name==""){-->
-  @if (nombrecito == '') {
+  @if (playerName == '') {
     <p>What your name?</p>
     <p>Game Player Name</p>
 
     <form [formGroup]="userForm" (ngSubmit)="submitForm()">
-      <label for="username">Nombre:</label>
+      <label for="username">Name:</label>
       <input type="text" id="username" formControlName="name" />
 
       <button type="submit">Enviar</button>

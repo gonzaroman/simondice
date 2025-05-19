@@ -14,12 +14,12 @@ export class HomeComponent {
   private router = inject(Router);
   public userNameService = inject(UsernameService);
 
-  nombrecito: string = this.userNameService.getNamePlayer();
+  playerName: string = this.userNameService.getNamePlayer();
 
   showButton: boolean = false;
 
-  comprobar() {
-    this.showButton = this.nombrecito !== '';
+  checkPlayerName() {
+    this.showButton = this.playerName !== '';
   }
 
   goUrl(url: string) {
@@ -34,7 +34,7 @@ export class HomeComponent {
     //  console.log('Valor del formulario:', this.userForm.value.name);
     const nameSubmit = this.userForm.value.name ?? null;
     this.userNameService.saveNamePlayer(nameSubmit);
-    this.nombrecito = this.userNameService.getNamePlayer();
-    this.comprobar();
+    this.playerName = this.userNameService.getNamePlayer();
+    this.checkPlayerName();
   }
 }
