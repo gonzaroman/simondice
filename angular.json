@@ -59,11 +59,6 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
                   "maximumError": "4kB"
-                },
-                {
-                  "type": "css-inline-fonts",
-                  "maximumWarning": "6kB",
-                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all"
